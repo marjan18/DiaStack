@@ -1,0 +1,920 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference, letterpaper]{IEEEtran}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+%\usepackage{subcaption}
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+   \usepackage[pdftex]{graphicx}
+\else
+\fi
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+\usepackage{color}
+%
+\usepackage{fancyhdr}
+\usepackage[caption=false,font=footnotesize]{subfig}
+
+\renewcommand{\thispagestyle}[2]{} 
+
+
+\fancypagestyle{plain}{
+        \fancyhead{}
+        \fancyhead[C]{first page center header}
+        \fancyfoot{}
+        \fancyfoot[C]{first page center footer}
+}
+\pagestyle{fancy}
+
+
+\headheight 20pt
+\footskip 20pt
+
+\rhead{}
+
+%Enter the first page number of your paper below
+\setcounter{page}{1}
+
+%Header
+\fancyhead[R]{\textit{}}
+\renewcommand{\headrulewidth}{0pt}
+
+%Footer
+
+\renewcommand{\footrulewidth}{0.5pt}
+\fancyfoot[R]{\thepage \  $|$ P a g e }
+\usepackage{hyperref}
+
+\begin{document}
+
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{
+    DiaStack: A Stacking Ensemble Framework for Proactive Diabetic Risk Assessment in Bangladesh\\
+    \vspace{0.9em}
+
+    \large\textit{Integrating Diverse Machine Learning Classifiers to Enhance Data-Driven Clinical Judgment and Early Intervention}
+}
+
+
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Nazia Sultana Marjan}
+\IEEEauthorblockA{Computer Science and Engineering\\
+Daffodil International University\\
+Dhaka, Bangladesh\\
+Email: marjan22205101802@diu.edu.bd}
+
+\and
+\IEEEauthorblockN{Jubayer Hossain}
+\IEEEauthorblockA{Computer Science and Engineering\\
+Daffodil International University\\
+Dhaka, Bangladesh\\
+Email: hossain22205101790@diu.edu.bd}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+%\begin{abstract}
+%\boldmath
+%The abstract goes here.
+%\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+% no keywords
+
+
+%\begin{IEEEkeywords}
+%Keyword1; Keyword2; Keyword3
+%end{IEEEkeywords}
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+%\IEEEpeerreviewmaketitle
+
+
+
+
+
+
+
+
+
+
+% (should never be an issue)
+%I wish you the best of success.
+
+%\hfill mds
+ 
+%\hfill January 11, 2007
+
+%\subsection{Subsection Heading Here}
+%Subsection text here.
+
+
+%\subsubsection{Subsubsection Heading Here}
+%Subsubsection text here.
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+
+
+\maketitle
+\begin{abstract}
+Diabetes has become a health concern in Bangladesh with most of the cases still unidentified because of the remoteness of healthcare and the complexity of the lifestyle. This research aim is to come up with a precise and valid predictive model that can be useful in the early diagnosis of diabetes and to enhance clinical decision-making. We used stacking ensemble model, which contained of Random Forest, Gradient Boosting, XGBoost, and Logistic Regression, using the DiaBD dataset, which includes 5,288 patient records retrieved throughout Bangladesh to better capture the nonlinear trends and address class imbalance. Due to the significantly smaller count of positive (diabetic) samples in the dataset, which causes bias in prediction, we also applied the threshold adjustment methods and algorithm level weighting of the classes to make the model more sensitive to entering diabetic cases. The system was evaluated based on accuracy, precision, recall, and F1-score with good overall performance in 93.76\% accuracy and weighted F1-score of 0.92 as well as high precision and recall rates in non-diabetic cases. The threshold-based improvements were useful in raising the detection compared to the standard models though performance in the case of diabetic cases. In general, the offered method of stacking has explicit opportunities of helping to diagnose early, minimize the time wasted in, and enhance the process of healthcare planning in the conditions of resource scarcity.
+\end{abstract}
+\textbf{\textit{Keywords:}} Stacking ensemble, Threshold, Class imbalance, Logistic Regression, Random Forest, Gradient Boosting; XGBoost
+
+%\begin{IEEEkeywords}
+
+%\end{IEEEkeywords}
+
+\section{Introduction}
+\label{sec:intro}
+%The conclusion goes here.
+
+
+
+
+Diabetes mellitus is being recognized more and more as a major global health issue due to its complex causes and the steady increase in cases, especially in low-income and middle-income countries like Bangladesh. The rising number of people affected by this disease puts a strain on healthcare systems and shows the urgent need for better screening and prevention methods. \\Recent developments in machine learning (ML), particularly with ensemble and stacking models, provide hopeful solutions. When these methods are used alongside clinical risk evaluation, they can greatly improve early detection, enable personalized prevention plans, and help with proactive intervention. In the end, this combination can lead to better disease management and improved patient outcomes around the world.\\
+During the last ten years, Bangladesh has experienced a substantial increase of diabetes cases. In 2011, the national adults was 0.50\%,and it is predicted to rise to 13.2\% by 2024\cite{pmc11964274}. Based on these figures, it is estimated that around 39\% of diabetes cases in Bangladesh remain undiagnosed. Furthermore, projections suggest that the total number of people living with diabetes in the country may reach 23.1 million by 2050. The epidemic study is shown in Table \ref{tab:diabetes prevelence} 
+\\
+\begin{table}[h!]
+\centering
+\caption{Diabetes Prevalence and Projections}
+\label{tab:diabetes prevelence}
+\renewcommand{\arraystretch}{1} % Adjusts row height
+\setlength{\tabcolsep}{4pt} % Reduces column spacing
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Year} & \textbf{Prevalence (\%)} & \textbf{Adults with Diabetes (M)} & \textbf{\% Undiagnosed} \\ 
+\hline
+2011 & 10.5 & 8.4 & -- \\ 
+\hline
+2024 & 13.2 & 13.9 & 39 \\ 
+\hline
+2050 & 15.4 (proj.) & 23.1 (proj.) & -- \\ 
+\hline
+\end{tabular}
+\end{table}
+\\
+Currently, more than 537 million adults around the world are affected. This is a 46\% increase in the previous decade and illustrates the growing need for effective screening and approaches to managing these thousands of millions of adults who have diabetes particularly in resource poor settings \cite{diabetesatlas2025}. There is emerging evidence from studies carried out in Bangladesh on the pivotal role of epidemiological factors for diabetes including young or older age, obesity, hypertension, urbanization, and more but, translational efforts from epidemiology to valid predictive analytics remain scarce\cite{bayesianbangladesh}.
+\\
+There is a clear understanding of the high incidence and underdiagnosed nature of diabetes in Bangladesh\cite{pmc11964274}. Commonly applied methods for risk prediction in diabetes include standard statistical models and simple machine learning classifiers\cite{bayesianbangladesh}.\\
+The composition of the paper residue is organized as follows: Section \ref{sec:related} delineates the literature, Sections  \ref{sec:method} and \ref{sec:result}elucidate the overall methodology and results, respectively, while Section \ref{future} and \ref{sec:con} articulates the future scope of this work and conclusions\\
+
+These methods have identified a small number of significant demographic and clinical risk factors. Nevertheless, there are significant limitations in terms of the sensitivity and specificity of the outputs, as well as the representation of complicated nonlinear risk patterns.
+Our stacking ensemble model achieved a strong overall accuracy of 93.76\% for diabetes risk prediction in Bangladeshi adults, with excellent performance for non-diabetic cases (precision 0.95, recall 0.99, f1-score 0.97). However, while the model showed reasonable precision (0.65) for detecting diabetics, the recall remained low (0.16), highlighting ongoing challenges in identifying underrepresented diabetic cases due to class imbalance. Overall, these results demonstrate the effectiveness of ensemble methods for risk stratification.
+\\
+
+
+Current predictive models in Bangladesh are hindered by data imbalance, limited flexibility to accommodate heterogeneous clinical features, and poor risk stratification of individuals who are likely to be at high risk despite identifiable risk factors and recent epidemiological study. There remains a gap in the implementation, optimization, and validation of informed ensemble machine learning methods, such as stacking, for diabetes risk prediction in a unique population\cite{ensemblebangladesh}.
+\\
+
+
+The main objective of this research is to develop, optimize and validate an ensemble stacking model for prediction of diabetes risk proactively for the Bangladeshi population. Our aims are: to evaluate the comparative performance of the model, to identify the most notable risk factors. We will address the following research questions:\\
+
+Which factors are most strongly associated with diabetes risk in Bangladeshi adults?\\
+Can a stacking ensemble model improve deabetes prediction accuracy compared to traditional machine-learning?\\
+How effectively can the model handle biased or imbalanced datasets with fewe diabeti samples?
+
+This research is an important opportunity to enhance early diabetes detection and provide timely management, both of which are essential in preventing long-term complications in Bangladesh's growing population of people with diabetes. The output will advance public health policy, inform clinical practice and contribute to the international dialogue on using machine learning informed by regional issues.
+
+This study focuses exclusively on adults aged 20-79 years in Bangladesh, using a local, validated dataset in diabetes research.
+Limitations: a single dataset may introduce sampling bias and the data unavailability resulted in the host of some variables around socioeconomic and genetic factors not being included in the present sample.
+
+\section{Related Works}
+\label{sec:related}
+Several machine learning and deep learning models have been proposed for diabetes prediction, including Logistic Regression, Random Forest, and Neural Networks. However, many face challenges like overfitting and limited generalization. To overcome these issues, our proposed model DiaStack uses a stacking ensemble approach that combines multiple classifiers for improved accuracy and robustness.Here are some related papers :\\
+
+Sampath et al. (2024) addressed the critical challenge of class imbalance in diabetes prediction through a comprehensive preprocessing and ensemble framework\cite{sampath2024robust} . The study employed the Pima Indian Diabetes dataset and implemented multiple preprocessing strategies including missing value imputation, outlier detection and removal, correlation-based feature selection, and SMOTE for class balancing. The proposed ensemble combined AdaBoost and XGBoost classifiers, with hyperparameters optimized via grid search. The model achieved an exceptional AUC of 0.968, significantly outperforming alternative methodologies and surpassing current state-of-the-art results. This work demonstrates that systematic preprocessing combined with ensemble diversity is essential for improving minority class detection.\\
+
+Tasin et al. (2022)developed an automatic diabetes prediction system using a private dataset of 203 female patients from Bangladesh combined with the Pima Indian diabetes dataset\cite{tasin2022diabetes}. The study employed mutual information for feature selection and utilized a semi-supervised model with XGBoost. SMOTE and ADASYN approaches were applied to manage class imbalance. The XGBoost classifier with ADASYN achieved 81\% accuracy, 0.81 F1 coefficient, and AUC of 0.84. The study implemented explainable AI using LIME and SHAP frameworks for model transparency, and developed both a website and Android application for real-time diabetes prediction, demonstrating practical application of machine learning in regional healthcare contexts.\\
+
+Reza et al. (2024) proposed two stacking-based ensemble methods for diabetes classification, introducing a new diabetes dataset collected from a local healthcare facility in Bangladesh\cite{ensemblebangladesh} . The study combined the PIMA Indian diabetes dataset with simulated and locally collected data. Using 5-fold cross-validation, the stacking ensemble with three neural network architectures achieved 95.50\% accuracy on simulated data. On the primary Bangladesh dataset, the proposed method achieved accuracy ranging from 92\% to 95\%. The cross-validation protocol outperformed the train-test split by 2.23\%-12\%, demonstrating the effectiveness of stacking ensembles for early diabetes detection in regional contexts.\\
+
+Jang et al. (2025)developed a novel feature-based ensemble model to address class imbalance in diabetes prediction\cite{jang2025feature}. Using the Scikit-learn diabetes dataset, the study balanced the training set using SMOTE and RUS. The innovative approach involved training multiple Random Forest classifiers on 10 two-feature subsets selected based on feature importance, then combining their outputs using soft voting. The feature-based ensemble model achieved accuracy of 0.8764 and AUC of 0.9227, outperforming 13 baseline models including deep learning approaches. This work shows that integrating thoughtful resampling strategies with feature-based ensemble architectures provides a scalable solution for early diabetes prediction.\\
+
+Li et al. (2024) proposed an advanced diabetes risk prediction model combining genetic algorithm-optimized XGBoost with LightGBM in a stacking ensemble framework\cite{li2024diabetes}. The Stacking ensemble model achieved an outstanding AUC of 98.90\%, markedly superior to individual models across all evaluated metrics. The model's exceptional performance was attributed to the collaborative effect of GA-XGBoost and LightGBM, with feature selection enhancing both predictive capability and generalizability. The study achieved interpretability breakthroughs by analyzing feature impacts using the SHAP framework, supporting early identification of high-risk individuals and facilitating personalized intervention strategies.\\
+
+Islam et al. (2025) introduced DiaBD, a comprehensive diabetes dataset specifically designed for research in Bangladesh\cite{islam2025diabd}. The dataset comprises 5,288 patient records with 14 independent attributes covering demographics, clinical parameters, and medical history. Each record is labeled with binary diabetes status, making it suitable for supervised learning tasks. The dataset addresses the scarcity of region-specific medical data and enables exploration of diabetes prevalence patterns, risk factor identification, and development of locally relevant predictive models. This benchmark dataset facilitates research on early diagnosis, targeted interventions, and machine learning applications in resource-constrained settings.\\
+
+Rustam et al. (2024)\ advanced diabetes detection through innovative ensemble feature engineering combining deep learning and traditional machine learning approaches\cite{rustam2024enhanced}. The study extracted features using CNN and LSTM networks, which were fed into traditional classifiers including Random Forest, SVC, Logistic Regression, and Decision Tree. Multiple public datasets including the Bangladesh diabetes dataset were merged to improve generalization. CatBoost demonstrated enhanced performance on the Bangladesh dataset, achieving accuracy of 0.99. The proposed Random Forest model utilizing CNN-LSTM features achieved 99\% accuracy overall, addressing limitations of small, homogeneous datasets.\\
+
+Alzubaidi et al. (2023) developed a novel stacking ensemble model combining multiple machine learning techniques for diabetes mellitus prediction\cite{alzubaidi2023towards}. The study employed Random Forest and Logistic Regression as base learners, with XGBoost serving as the meta-learner. The Stacking-C technique was applied to the diabetes dataset, integrating predictions from KNN, SVM, and other classifiers. The proposed stacking model demonstrated improved predictive performance compared to individual classifiers, emphasizing the importance of model diversity and hierarchical learning in ensemble approaches. This work highlights the potential of stacking ensembles for chronic disease prediction and early identification.\\
+
+Wang et al. (2020) introduced the XGBoost algorithm to diabetes risk prediction, comparing its performance against SVM, Random Forest, and K-NN\cite{wang2020prediction}. Using a dataset of 368 middle-aged and elderly individuals from Beijing, the XGBoost model achieved accuracy of 89.09\% and AUC of 0.9182, outperforming all baseline algorithms. The authors highlighted XGBoost's superior prediction accuracy, generalization ability, and robustness even with relatively small datasets. This study positioned XGBoost as a powerful tool for intelligent diabetes prevention and population-level screening, demonstrating its practical applicability in real-world healthcare settings.\\
+
+DiaStack tackles significant gaps in diabetes risk prediction by providing a transparent, regionally validated stacking ensemble framework in a healthcare context for Bangladesh. While prior research presents machine learning methods as effective strategies for diabetes risk prediction, they lack regional validation, require complicated preprocessing, have limited algorithm validation, and face challenges in clinical implementation (Sampath et al., 2024; Li et al., 2024; Rustam et al., 2024). DiaStack overcomes these limitations by validating it on the DiaBD Bangladesh dataset of 5,288 records, using the ensemble techniques Random Forest, Gradient Boosting, and XGBoost, along with Numerical and Logistic Regression as meta-learners and algorithm-level class weighting, achieving 93.76\% accuracy and a 0.92 weighted F1-score, fully reproducible using standard libraries, providing a scalable solution used to identify diabetes risk in resource-poor settings.
+\\
+
+
+\begin{table*}[t]
+\centering
+\caption{Comparison of DiaStack with Related Works}
+\label{tab:comparison}
+\footnotesize
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|c|l|c|c|c|l|}
+\hline
+\textbf{Study} & \textbf{Year} & \textbf{Method} & \textbf{Dataset} &
+\textbf{Size} & \textbf{Acc./AUC} & \textbf{Base Learners} \\
+\hline
+\textbf{DiaStack (Ours)} & \textbf{2025} & \textbf{Stacking} & 
+\textbf{DiaBD-BD} & \textbf{5,288} & \textbf{93.76\%} & 
+\textbf{RF + GBM + XGB} \\
+\hline
+Sampath et al.\cite{sampath2024robust} & 2024 & Ensemble + SMOTE & PIMA & 768 & 
+AUC: 0.968 & AdaBoost + XGB \\
+\hline
+Wang et al.\cite{wang2020prediction} & 2020 & XGBoost & Beijing & 368 & 89.1\% &
+XGBoost \\
+\hline
+Jang et al.\cite{jang2025feature} & 2025 & Feature RF & Sklearn & 442 & 87.6\% &
+10 RF models \\
+\hline
+Li et al.\cite{li2024diabetes} & 2024 & GA-XGBoost & Multi-source & -- & 
+AUC: 0.989 & GA-XGB + LGB \\
+\hline
+Reza et al.\cite{ensemblebangladesh} & 2024 & DNN Stack & BD + PIMA & 500 & 
+95.5\% & 3 DNNs \\
+\hline
+Rustam et al.\cite{rustam2024enhanced} & 2024 & CNN-LSTM & BD + Multi & -- & 
+99.0\% & CNN-LSTM + RF \\
+\hline
+Tasin et al.\cite{tasin2022diabetes} & 2022 & XGBoost & BD + PIMA & 203 & 81.0\% &
+XGBoost \\
+\hline
+\end{tabular}%
+}
+\end{table*}
+
+
+
+
+
+
+Table \ref{tab:comparison} presents a comparison of DiaStack (2025) with other current diabetes prediction models. DiaStack attains an accuracy rate of 93.76\%, on the most extensive Bangladesh-specific dataset comprising 5,288 patient entries. This outstanding result is achieved through a stacking technique that integrates the capabilities of Random Forest (RF), Gradient Boosting Machine (GBM) and XGBoost guaranteeing both robustness and generalizability. In contrast, many existing studies rely on smaller, international datasets such as PIMA or Beijing, which may limit their applicability to local populations. Additionally, some approaches utilize complex deep learning architectures, such as CNN-LSTM or DNN stacking, which often require more computational resources and may be harder to interpret. By focusing on a large, region-specific dataset and combining well-established machine learning models, DiaStack provides a practical, high-accuracy solution for diabetes prediction in Bangladesh.
+
+
+
+\section{Methodology}
+\label{sec:method}
+\subsection{Research Objective}
+Our research aims at creating DiaStack, a new stacking ensemble model to achieve proper diabetic risks estimation in Bangladeshi population. Particularly the approach consists of Random Forest, Gradient Boosting and XGBoost base learners and a Logistic Regression meta-learner which is trained using a real-world data set, to optimize predictive performance. Through this integrated approach, the study will be able to facilitate preventive risk measurements as well as early detection of the high-risk people when it comes to diabetes. The derived framework is to be used in bolstering the utility of the public health by taking early interventions and preventive approaches in Bangladesh.
+\subsection{Model Design}
+The research takes a quantitative and empirical research design that can be promoted by the comparative benchmarking of various machine-learning algorithms. The strategy entails the education and testing of multiple foundation classifiers, such as; Random Forest, Gradient Boosting, and XGBoost, on a genuine data set of diabetes in Bangladesh. These models are then incorporated in a stacking ensemble model to help in a systematic comparison of the results and identify the most efficient model to predict risk of diabetes.
+\subsection{Dataset}
+The dataset employed in the study is the DiaBD which is a curated health-informatics dataset with 5,288 patient records and 14 clinical and demographic attributes which was created to aid in diabetes-risk analysis in Bangladesh. With the CC BY 4.0 license available at Mendeley, the dataset contains demographic and vital signs data, anthropometry, including BMI, measures of the medical history, and a binary variable indicating diabetes status. Once the CSV file has been loaded, a number of preprocessing operations were performed to make the data ready to be analyzed by machine-learning. To begin with the elimination of duplicate entries was carried out to eliminate redundancy in data. The height and weight attributes were not needed in the model hence were not included as they proved to be inconsistent. The missing values were also checked and processed accordingly so that the data remained complete. Label Encoding was used to transform categorical features, and StandardScaler was used to standardize continuous variables to make them have an equal scale and enhance algorithm performance. Data was then divided into 20\% and 80\% test and training sets respectively. All the experiments were written in Python, with the help of such libraries as pandas, NumPy, scikit-learn, and XGBoost and common visualization tools. 
+\subsection{Model Architecture}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.47\textwidth]{figure/arch.png}
+    \caption{Model Architecture of DiaStack}
+    \label{fig:arch}
+\end{figure}
+The architecture of our DiaStack model is based on a stacking ensemble for improving accuracy and robustness in diabetes prediction. First, the DiaBD dataset is split into a training-testing set using a stratified split to preserve the original class distribution\ref{fig:arch}. Then, three different machine learning algorithms, namely Random Forest, Gradient Boosting, and XGBoost, are trained as base models on the training data. Instead of using their direct predictions, each base model generates probability scores representing the likelihood of diabetes. These probabilities are combined into a new enriched feature set that feeds into a Logistic Regression classifier acting as the meta-learner. A meta-learner analyzes these combined signals to produce the final output that predicts whether an individual is healthy (0) or diabetic (1). This stacked structure leverages the strengths of multiple models, hence improving the performance compared to the use of a single classifier.
+\subsection{Algorithms}
+In our study, three powerful machine learning algorithms, namely Random Forest, Gradient Boosting, and XGBoost, are used as base learners in the ensemble model. These algorithms are widely applied on tabular data because of their powerful predictive capabilities, non-linear pattern handling, and robustness against overfitting. Their diversified learning strategies help the stacked model capture complementary information to provide more accurate diabetes prediction.
+
+Random Forests are ensemble models developed from several decision trees, each trained on a random selection of data and features. The final prediction is obtained by averaging all tree outputs, which reduces variance and improves generalization performance.
+\[
+\hat{y}_{RF}(x) = \frac{1}{T} \sum_{t=1}^{T} h_t(x)
+\]
+where $h_t(x)$ is the output of tree $t$, and $T$ is the total number of trees.
+
+Gradient Boosting builds models in a sequential manner, each new weak learner trying to correct the errors of the previous ones. By minimising a loss function through gradient descent, it produces a strong predictive model that is able to capture complex relationships in the data.
+
+\[
+\hat{y}_{GBM}(x) = \sum_{m=1}^{M} \gamma_m h_m(x)
+\]
+where $h_m(x)$ are weak learners, and $\gamma_m$ are their weights.
+
+XGBoost, standing for Extreme Gradient Boosting, is an optimized and regularized version of gradient boosting that is designed for fast training and high accuracy. It includes several advanced features such as regularization, tree pruning, and parallel computation, putting it among the most efficient algorithms on structured data.
+\[
+\mathcal{L}(\theta) = \sum_{i=1}^{n} l(y_i, \hat{y}_i) + \sum_{k=1}^{K} \Omega(f_k)
+\]
+
+\[
+\text{where } \Omega(f) = \gamma T + \frac{1}{2}\lambda \|w\|^2 \text{ controls model complexity.}
+\]
+\subsection{Workflow Diagram}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.47\textwidth]{figure/work.png}
+    \caption{Workflow Diagram of DiaStack}
+    \label{fig:work}
+\end{figure}
+
+The overall workflow of the proposed DiaStack model includes three main phases\ref{fig:work}. In Phase 1, the DiaBD dataset undergoes preprocessing, where the data is cleaned, relevant features (X) and labels (y) are extracted, and the dataset is then split into training (80\%) and testing (20\%) portions by stratified sampling to preserve class distribution. In Phase 2, the train data is used to develop the architecture of the stacking ensemble: three base learners, namely Random Forest, Gradient Boosting, and XGBoost, are trained independently, and their probability outputs are combined to form a new feature set. This enriched representation is fed into a Logistic Regression classifier that acts as a meta-learner. In Phase 3, the final stacked model generates predictions on the unseen test set, and its performance is assessed using metrics like accuracy, F1-score, and recall. This workflow ensures a systematic and robust approach toward diabetes prediction.
+\subsection{Feature Selection and Noble Contribution }
+To improve both the performance of predictions and predictors interpretability, features were chosen based on correlation analysis. Thus, the redundant or weakly relevant features were eliminated and missing values were estimated using imputation. All categorical and numerical features being label encoded and standardized to be identical across models. The overall novelty of our research is that it created DiaStack, an ensemble stack, pitting Random Forest, Gradient Boosting, and XGBoost as base learners and Logistic Regression as a meta-learner, enabling it to generalize better on an actual real-world population of Bangladeshi health. Moreover, our research suggests a threshold-adjusting mechanism to address the excessive imbalance of the data on the high classes. To mitigate this, predicted probabilities from the ensemble model are converted into class labels using a tunable decision threshold rather than the standard cutoff. By lowering the threshold, the model becomes more sensitive to minority class patterns, thereby increasing recall for diabetic cases without modifying the underlying feature extraction or training pipeline. 
+\subsection{Experimental Setup}
+DiaStack was stratified and divided into 80 percent training and 20 percent test to maintain the class balance. The performance of the DiaStack model has been measured using accuracy, precision, recall, F1-score and ROC-AUC and confusion matrices. The baselines were compared with individual classifiers and they were Random Forest, Gradient Boosting, and XGBoost. The grid search was used to optimize the hyperparameters RF (nestimators=300), GB (learningrate=0.05), XGBoost (learningrate=0.05, maxdepth=6, subsample=0.8) and Logistic Regression. All the models were present in scikit-learn and XGBoost in a Google Colab environment to make them all reproduceable and efficient.
+\subsection{Summary}
+DiaStack was stratified and divided into 80 percent training and 20 percent test to maintain the class balance. The performance of the DiaStack model has been measured using accuracy, precision, recall, F1-score and ROC-AUC and confusion matrices. The baselines were compared with individual classifiers and they were Random Forest, Gradient Boosting, and XGBoost. The grid search was used to optimize the hyperparameters RF (nestimators=300), GB (learningrate=0.05), XGBoost (learningrate=0.05, maxdepth=6, subsample=0.8) and Logistic Regression. All the models were present in scikit-learn and XGBoost in a Google Colab environment to make them all reproduceable and efficient.
+\section{Result Analysis}
+\label{sec:result}
+Here the performance analysis of the proposed DiaStack stacking ensemble model is given and its applicability is justified by both quantitative measures and interactive web-based clinical assessment interface. The aim is to measure predictive accuracy, to compare the strength and weaknesses between different classes, and to test real-world interpretability by considering the usage of examples on patients.\\
+
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.47\textwidth]{figure/perf.png}
+    \caption{Model Performance}
+    \label{fig:perf}
+\end{figure}
+The DiaStack model was evaluated on the DiaBD dataset comprising 5,288 Bangladeshi patient records. Performance was assessed using accuracy, precision, recall, F1-score, ROC-AUC, and confusion matrix analysis\ref{fig:perf}. The stacking ensemble-combining Random Forest, Gradient Boosting, and XGBoost as base learners with Logistic Regression as the meta-learner-demonstrated strong overall predictive capability.\\
+The number of diabetes case underreporting is so great that the threshold set at 0.5 does not have enough sensitivity to detect people who have diabetes. To solve this problem, DiaStack has been created with a way to change the threshold so that the decision point gets lower for diabetic cases and thus can better identify minority (diabetics) cases.
+One key benefit of having a dynamic threshold in DiaStack is that clinicians or public health professionals can modify their sensitivity to assist those patients at the highest level of risk. Furthermore, the addition of the dynamic threshold has improved diabetes recall without having to retrain the model, making it much more suitable for early intervention efforts.\\
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[height=0.4\textwidth]{figure/thre.png}
+    \caption{Threshold Adjustment}
+    \label{fig:thre}
+\end{figure}
+
+Using a slide bar, the Risk Detection Sensitivity allows users to set their risk detection threshold for diabetes to the level that works best for them. At low sensitivity levels (0.2–0.3), the system will catch most of the cases with a potentially high-risk for developing diabetes but generate more alerts. A higher sensitivity level (0.45–0.9) is more conservative and may only alert users to those at the highest confidence levels. Therefore, the middle-level range of 0.35–0.4, provides an optimal middle ground for screening. After the user selects a level from the slide bar, the system compares the calculated risk score of each individual patient (0–100\%) with the sensitivity threshold selected; if the risk score equals or exceeds the threshold selected, an alert will be generated; if below the threshold, no alert will be generated.\\
+
+To connect the actual clinical experience with the statistical data generated by a risk assessment algorithm, we developed an interactive Web App for predicting diabetes risk. The Web App displays a combination of a user's clinical, metabolic, cardiovascular, and risk factor history in a visual format. As part of the process, users are given a probability score (risk probability) for having diabetes and a model certainty score (how certain the algorithm is that the user falls into the high-risk category) based on a consensus averaging method from individual model outputs.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.52\textwidth]{figure/web.png}
+    \caption{Web Application}
+    \label{fig:web}
+\end{figure}
+
+This ui is presented to show how users would see the different views of the Web App, including assessment forms, example user input. The visual tools used with the risk assessment model increase its clinical relevance.\\
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.47\textwidth]{figure/data.png}
+    \caption{Row 10 of dataset}
+    \label{fig:data}
+\end{figure}
+The patient record of row 10 of the dataset (50-year-old male with high systolic/diastolic blood pressure (135/87 mmHg), normal BMI (24.13), and critically high glucose (level, 17.04 mmol/L) was used to test the web-based clinical assessment interface\ref{fig:data} \ref{fig:patient}.\\
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.52\textwidth]{figure/patient.png}
+    \caption{Patient Assessment}
+    \label{fig:patient}
+\end{figure}
+When these values were entered the system provided an 11.4 percent predicted risk of diabetes at 88.6 percent confidence, which is greater than the user set 10 percent detection threshold and a High Risk Detected warning and a medical consultation recommendation which is as similar to the actual prediction from the dataset\ref{fig:assessment}.\\
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.52\textwidth]{figure/assessment.png}
+    \caption{Assessment Result}
+    \label{fig:assessment}
+\end{figure}
+Even though the absolute probability score is low compared to the extreme glucose value, the action of the system is in line with its threshold-based screening design, which is sensitive to the presence of class imbalance and ensemble averaging effects. The interface also manages to visualize patient measures, model outputs, and alert logic to be highly interpretable and usable in real-world early-screening situations, and it also shows that probability calibration and confirmatory clinical testing are necessary when abnormal metabolic values have been observed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+The DiaStack diabetes prediction model was shown to be effective in general with a high accuracy of 93.76\% and a weighted F1-score of 0.92, which means that the prediction model is reliable in all situations, whether in the dataset or not. The ensemble model showed a high performance in the case of non-diabetic instances with the highest level of precision of 95 and the highest level of recalls of 99 demonstrating its capability of accurately determining healthy people with some false alarms. Nevertheless, the recall with diabetic was low (16) because the dataset was highly imbalanced with classes, a factor that is managed by the system adjustable sensitivity threshold which increases recall in the screening case. The model was also proven to be highly practical through the clinical assessment interface based on the web platform, which was able to analyze actual patient data accurately. In a high-risk case (row 10), where the critically high glucose level of the 17.04 mmol/L and moderately high blood pressure were noted, the system generated an 11.4\% risk score which was above the 10 percent detection threshold, and an alarm was raised about high risk with 88.6\% certainty. This shows that the platform combines the use of predictive models and the ability to form intuitive risk interpretations, so that users can identify possible occurrence of diabetes earlier on and especially in resource-restricted environments. In general, the findings prove that DiaStack is a useful screening tool, having high interpretability, consistently working, and practical risk measures that can be applied to the real-life setting of healthcare services.
+\section{Future Works}
+\label{future}
+We will develop the DiaStack framework by deeply integrating Explainable AI techniques to determine which clinical features weigh on individual diabetic risk predictions. Our system will integrate techniques like SHAP or LIME so that clinicians and patients will be able to understand if glucose, blood pressure, BMI, heart rate, or other lifestyle factors contributed most to a given risk score. This interpretability will also support medical decision-making and help validate the model in clinical settings. The system will be extended to provide personalized recommendations about the necessary post-assessment dietary adjustments, advice on physical activity, and routine monitoring of glucose levels and follow-up medical tests, so that alongside the predicted risk, patients also receive concrete steps they can take. Further enhancements-such as dataset expansion, probability calibration, and integration with mobile and wearable data-will further enhance the robustness of the model and unlock continuous real-time health monitoring.
+\section{Conclusion}
+\label{sec:con}
+In conclusion, the DiaStack system has shown incredible potential as a usable and accurate AI-driven diabetes screening tool for Bangladesh, ensuring high predictive performance, user-friendliness, and meaningful real-world applicability. Its evaluation on real patient data confirms its ability to detect abnormal metabolic patterns and issue appropriate alerts, supporting early identification of diabetes in resource-constrained environments. By combining ensemble learning with configurable sensitivity thresholds, the system ensures adaptable screening for both community-level outreach and clinical settings. With the integration of XAI-based feature interpretation and personalized guidance planned, the DiaStack system will become a comprehensive, transparent, and accessible digital health solution that significantly advances early diabetes risk detection and public health impact.
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgement
+%\section*{Acknowledgment}
+
+
+%The authors would like to thank...
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+%\section{Reference}
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{1}
+
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+%\end{thebibliography}
+
+\bibliographystyle{IEEEtran}
+\bibliography{ref}
+
+
+% that's all folks
+\end{document}
+
+
